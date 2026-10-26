@@ -1,0 +1,79 @@
+1
+00:00:00,010 --> 00:00:11,920
+This is Know Your Customer at NEWEAST. A new customer starts as a lead, and ends as a customer master in SAP.
+
+2
+00:00:11,970 --> 00:00:23,550
+Watch the role on screen. Sales creates. The customer fills. Sales, then the manager, then Finance. SAP is last.
+
+3
+00:00:23,600 --> 00:00:33,990
+Chapter one. Sales creates the lead and sends the KYC form.
+
+4
+00:00:34,040 --> 00:01:12,380
+Sales — This is Add New Lead. The salesman is already set. Capture the company.
+
+5
+00:01:12,430 --> 00:01:20,700
+Sales — Pin the site on the map. The address sits on the map before you save.
+
+6
+00:01:20,750 --> 00:01:33,670
+Sales — Add the lead. Confirm on the next screen.
+
+7
+00:01:33,720 --> 00:01:45,590
+Sales — The lead is on Existing Lead. Send the KYC form from here.
+
+8
+00:01:45,640 --> 00:01:54,760
+Chapter two. The customer opens the KYC form from the link.
+
+9
+00:01:54,810 --> 00:02:04,330
+Customer — Company profile, bank, and owners. Required fields first.
+
+10
+00:02:04,380 --> 00:02:14,240
+Customer — Submit. The case returns to Sales.
+
+11
+00:02:14,290 --> 00:02:27,830
+Chapter three. Sales reviews the KYC, then sends it to the line manager.
+
+12
+00:02:27,880 --> 00:02:39,760
+Sales — Read the answers. Send to Line Manager.
+
+13
+00:02:39,810 --> 00:02:48,550
+Chapter four. The sales manager decides. Finance is next.
+
+14
+00:02:48,600 --> 00:03:01,330
+Sales manager — Open the request.
+
+15
+00:03:01,380 --> 00:03:10,320
+Chapter five. Finance Lead Approval. People sign in order.
+
+16
+00:03:10,370 --> 00:03:32,850
+Finance — Open the case. This seat is not last, so escalate is not here.
+
+17
+00:03:32,900 --> 00:03:49,050
+Finance — Now this is the last seat. Escalate is available.
+
+18
+00:03:49,100 --> 00:04:06,660
+Chapter six. Escalation. Approve still closes on SAP.
+
+19
+00:04:06,710 --> 00:04:13,300
+Chapter seven. SAP. The lead becomes the customer master.
+
+20
+00:04:13,350 --> 00:04:19,700
+Know Your Customer at NEWEAST. Lead. KYC. Approve. SAP.

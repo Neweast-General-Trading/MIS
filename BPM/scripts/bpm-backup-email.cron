@@ -1,0 +1,5 @@
+# BPM database backup + email (Asia/Dubai — server uses TZ=Asia/Dubai)
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+0 4 * * * root /home/negt/MIS/BPM/scripts/backup-bpm-email.sh >> /home/negt/MIS/BPM/.run/logs/backup-cron.log 2>&1
+0 12 * * * root /home/negt/MIS/BPM/scripts/backup-bpm-email.sh >> /home/negt/MIS/BPM/.run/logs/backup-cron.log 2>&1

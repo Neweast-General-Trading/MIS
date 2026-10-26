@@ -1,0 +1,17 @@
+services:
+  bpm-postgres:
+    image: postgres:16
+    container_name: bpm-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bpm
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    # Bound to localhost only; never expose PostgreSQL publicly.
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - bpm_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  bpm_postgres_data:

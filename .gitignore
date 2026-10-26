@@ -1,0 +1,53 @@
+# Not published — keep on the server only
+/group-finance/
+/collection-intelligence-dashboard/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.secret
+**/session.secret
+group-finance/data/session.secret
+group-finance/data/snapshot.json
+BPM/scripts/backup-email.env
+BPM/NEWEAST-ACCOUNTS.md
+BPM/database.sql.gz
+
+# Dependencies & build
+node_modules/
+dist/
+build/
+out/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Runtime / local data
+server/data/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.cursor/
+
+# BPM runtime (copy of BPM gitignore)
+BPM/backups/
+BPM/User_LOG/
+BPM/word-jobs/
+BPM/inbox/
+BPM/payload/
+BPM/.run/
+BPM/bpm-api/docx/BPM-Files/
+BPM/bpm-api/docx/BPM-FILES/
+BPM/bpm-api/docx/*.docx
+BPM/bpm-api/tools/mermaid/pp.json
+BPM/bpm-api/tools/mermaid/t.mmd
+BPM/bpm-api/tools/mermaid/t.png
+__pycache__/
+.pm2/

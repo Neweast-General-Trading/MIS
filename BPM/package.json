@@ -1,0 +1,33 @@
+{
+  "name": "bpm-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BPM — business process management platform (NestJS API + React web UI)",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Neweast-General-Trading/BPM.git"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "install:all": "(cd bpm-api && npm ci) && (cd material-kit-react && npm ci)",
+    "dev:api": "npm run start:dev --prefix bpm-api",
+    "dev:web": "npm run dev --prefix material-kit-react",
+    "build": "npm run build:api && npm run build:web",
+    "build:api": "npm run build --prefix bpm-api",
+    "build:web": "npm run build --prefix material-kit-react",
+    "lint": "npm run lint --prefix bpm-api && npm run lint --prefix material-kit-react",
+    "api:build": "npm run build --prefix bpm-api",
+    "api:restart": "npm run api:build && systemctl restart bpm-api.service",
+    "pm2:start": "npx --yes pm2@5 start ecosystem.config.cjs",
+    "pm2:stop": "npx --yes pm2@5 stop bpm-web",
+    "pm2:restart": "npm run api:restart && npx --yes pm2@5 start ecosystem.config.cjs --update-env || npx --yes pm2@5 restart bpm-web",
+    "pm2:delete": "npx --yes pm2@5 delete bpm-web",
+    "pm2:logs": "npx --yes pm2@5 logs",
+    "pm2:save": "npx --yes pm2@5 save",
+    "pm2:startup": "npx --yes pm2@5 startup"
+  }
+}

@@ -1,0 +1,25 @@
+# systemd unit for the BPM API.
+#   sudo cp deploy/bpm-api.service.example /etc/systemd/system/bpm-api.service
+#   (edit WorkingDirectory / ExecStart / User for your host)
+#   sudo systemctl daemon-reload && sudo systemctl enable --now bpm-api
+[Unit]
+Description=BPM NestJS API
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bpm
+WorkingDirectory=/opt/bpm/bpm-api
+EnvironmentFile=-/opt/bpm/bpm-api/.env
+ExecStart=/usr/bin/node /opt/bpm/bpm-api/dist/main.js
+Restart=always
+RestartSec=5
+KillMode=mixed
+TimeoutStopSec=20
+# Logs go to the journal:  journalctl -u bpm-api -f
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

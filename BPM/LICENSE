@@ -1,0 +1,9 @@
+Copyright (c) 2026 New East General Trading. All rights reserved.
+
+This software and its documentation are proprietary. No part of it may be copied,
+modified, distributed, sublicensed or used outside New East General Trading and its
+authorised partners without prior written permission.
+
+Third-party components keep their own licenses (for example the Minimal UI
+"Material Kit React" template under material-kit-react/LICENSE.md and the npm
+dependencies listed in the package manifests).

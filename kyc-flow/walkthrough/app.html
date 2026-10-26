@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NEWEAST · KYC (dummy)</title>
+<style>
+  :root {
+    --red: #b51e21;
+    --ink: #1e1818;
+    --muted: #6d6262;
+    --line: #eadfdc;
+    --bg: #f6f1ee;
+    --card: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1680px; height: 840px; overflow: hidden; font-family: "Liberation Sans", Arial, sans-serif; color: var(--ink); background: var(--bg); }
+  .top {
+    height: 58px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 22px; background: #fff; border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { height: 32px; }
+  .brand strong { font-size: 15px; letter-spacing: .04em; }
+  .who { font-size: 13px; color: var(--muted); }
+  .who b { color: var(--ink); }
+  .ribbon {
+    background: #1e1818; color: #fff; font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 7px 22px; display: flex; justify-content: space-between;
+  }
+  .ribbon span { color: #f3b4b5; }
+  .shell { display: flex; height: 754px; }
+  .nav { width: 232px; background: #fff; border-right: 1px solid var(--line); padding: 16px 12px; }
+  .nav button {
+    display: block; width: 100%; text-align: left; border: 0; background: transparent;
+    padding: 11px 12px; border-radius: 10px; font-size: 14px; cursor: pointer; color: var(--ink); margin-bottom: 4px;
+  }
+  .nav button.on { background: #fbe9e8; color: var(--red); font-weight: 700; }
+  .nav .hint { margin: 18px 8px 0; font-size: 12px; color: var(--muted); line-height: 1.45; }
+  .main { flex: 1; padding: 22px 28px 28px; overflow: hidden; }
+  .view { display: none; height: 100%; }
+  .view.on { display: block; }
+  h1 { font-size: 26px; letter-spacing: -.3px; }
+  .sub { color: var(--muted); margin: 6px 0 18px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+  .full { grid-column: 1 / -1; }
+  label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  input, textarea, select {
+    width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 15px;
+    font-family: inherit; background: #fff;
+  }
+  textarea { min-height: 72px; resize: none; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .row { display: flex; gap: 10px; align-items: center; margin-top: 16px; }
+  button.btn {
+    border: 0; border-radius: 11px; padding: 11px 18px; font-size: 15px; font-weight: 700; cursor: pointer;
+    background: var(--red); color: #fff;
+  }
+  button.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+  button.warn { background: #8a1719; }
+  button.gold { background: #8a5a12; }
+  .toast {
+    margin-top: 14px; background: #1e1818; color: #fff; border-radius: 12px; padding: 12px 14px; font-size: 14px; display: none;
+  }
+  .toast.on { display: block; }
+  .toast b { color: #f3b4b5; }
+  .status { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #fbe9e8; color: var(--red); font-size: 12px; font-weight: 700; }
+  .meta { display: flex; gap: 18px; font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+  .pack { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .pack div { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .pack small { display: block; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+  .matrix { display: flex; gap: 10px; margin: 12px 0 18px; }
+  .step {
+    flex: 1; border: 2px solid var(--line); border-radius: 14px; padding: 12px; text-align: center; background: #fff; font-weight: 700;
+  }
+  .step small { display: block; font-weight: 400; color: var(--muted); margin-top: 4px; }
+  .step.done { border-color: #1a7a46; background: #edf8f1; }
+  .step.now { border-color: var(--red); background: #fbe9e8; }
+  .sap { font-family: ui-monospace, Consolas, monospace; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .ok { color: #1a7a46; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">
+      <img src="logo.png" alt="" />
+      <strong>Know Your Customer</strong>
+    </div>
+    <div class="who">Signed in · <b id="whoName">Jad Sakour</b> · <b>sakour@neweast.co</b></div>
+  </div>
+  <div class="ribbon">
+    <div>Dummy walkthrough · no live post · no other mailboxes</div>
+    <div>Notify only <span>sakour@neweast.co</span></div>
+  </div>
+  <div class="shell">
+    <aside class="nav">
+      <button class="on" data-go="leads" id="nav-leads">Leads</button>
+      <button data-go="create" id="nav-create">New lead</button>
+      <button data-go="send" id="nav-send">Send KYC link</button>
+      <button data-go="customer" id="nav-customer">Customer form</button>
+      <button data-go="sales" id="nav-sales">Sales review</button>
+      <button data-go="manager" id="nav-manager">Sales manager</button>
+      <button data-go="finance" id="nav-finance">Finance matrix</button>
+      <button data-go="escalate" id="nav-escalate">Escalation</button>
+      <button data-go="sap" id="nav-sap">SAP B1</button>
+      <p class="hint">Local dummy screens only. Buttons never call the live KYC API.</p>
+    </aside>
+    <main class="main">
+      <section class="view on" id="view-leads">
+        <h1>Leads</h1>
+        <p class="sub">Dummy inbox for this recording. One case is used throughout: DEMO-KYC-00041.</p>
+        <table>
+          <thead><tr><th>Request</th><th>Customer</th><th>Owner</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>DEMO-KYC-00041</td>
+              <td>Oasis Demo Trading LLC</td>
+              <td>sakour@neweast.co</td>
+              <td><span class="status" id="leadStatus">Draft</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <button class="btn" id="btn-open-create">Create a dummy lead</button>
+        </div>
+      </section>
+
+      <section class="view" id="view-create">
+        <h1>New lead</h1>
+        <p class="sub">Sales captures the customer before the KYC link is sent. Dummy values only.</p>
+        <div class="card">
+          <div class="grid">
+            <div>
+              <label>Legal name</label>
+              <input id="f-name" value="" placeholder="Legal name" />
+            </div>
+            <div>
+              <label>Company code</label>
+              <select id="f-co"><option>NEWEAST FZCO (dummy)</option></select>
+            </div>
+            <div>
+              <label>Contact</label>
+              <input id="f-contact" />
+            </div>
+            <div>
+              <label>Email · KYC link destination</label>
+              <input id="f-email" />
+            </div>
+            <div>
+              <label>WhatsApp</label>
+              <input id="f-wa" />
+            </div>
+            <div>
+              <label>Country</label>
+              <input id="f-country" />
+            </div>
+            <div class="full">
+              <label>Purpose</label>
+              <textarea id="f-purpose"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn" id="btn-save-lead">Save dummy lead</button>
+          </div>
+          <div class="toast" id="toast-lead"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-send">
+        <h1>Send KYC link</h1>
+        <p class="sub">Live system emails and WhatsApps the public form. This demo only shows the message that would go to sakour@neweast.co. Nothing is posted.</p>
+        <div class="meta">
+          <div>Request <b>DEMO-KYC-00041</b></div>
+          <div>To <b>sakour@neweast.co</b></div>
+        </div>
+        <div class="card">
+          <p style="font-size:16px;line-height:1.5">Please complete Know Your Customer for <b>Oasis Demo Trading LLC</b>. Open the dummy form from this walkthrough. This mailbox is the only destination used in the recording.</p>
+          <div class="row">
+            <button class="btn" id="btn-mail">Show email to sakour@neweast.co</button>
+            <button class="btn ghost" id="btn-wa">Show WhatsApp to same mailbox</button>
+          </div>
+          <div class="toast" id="toast-send"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-customer">
+        <h1>Customer KYC form</h1>
+        <p class="sub">Public form opened from the link. Dummy answers. Submit stays on this page.</p>
+        <div class="card">
+          <div class="grid">
+            <div><label>Legal name</label><input id="c-name" /></div>
+            <div><label>Trade licence</label><input id="c-tl" /></div>
+            <div><label>Tax / TRN</label><input id="c-trn" /></div>
+            <div><label>Bank</label><input id="c-bank" /></div>
+            <div class="full"><label>Beneficial owners</label><textarea id="c-ubo"></textarea></div>
+          </div>
+          <div class="row">
+            <button class="btn" id="btn-submit-kyc">Submit dummy KYC</button>
+          </div>
+          <div class="toast" id="toast-kyc"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-sales">
+        <h1>Sales review</h1>
+        <p class="sub">Sales checks the pack. Approve goes to the sales manager. Reject would return it to the customer. Dummy approve only.</p>
+        <div class="pack">
+          <div><small>Customer</small><b>Oasis Demo Trading LLC</b></div>
+          <div><small>TRN</small><b>100-000-000-003</b></div>
+          <div><small>Mailbox</small><b>sakour@neweast.co</b></div>
+        </div>
+        <div class="card">
+          <label>Sales comment</label>
+          <textarea id="s-note"></textarea>
+          <div class="row">
+            <button class="btn" id="btn-sales-ok">Approve to manager</button>
+            <button class="btn ghost" id="btn-sales-no">Reject (not used)</button>
+          </div>
+          <div class="toast" id="toast-sales"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-manager">
+        <h1>Sales manager</h1>
+        <p class="sub">Next person on the live path. Approve opens Finance Lead Approval.</p>
+        <div class="card">
+          <p style="margin-bottom:12px">Same dummy pack. Manager cannot skip Finance.</p>
+          <label>Manager comment</label>
+          <textarea id="m-note"></textarea>
+          <div class="row">
+            <button class="btn" id="btn-mgr-ok">Approve to Finance</button>
+          </div>
+          <div class="toast" id="toast-mgr"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-finance">
+        <h1>Finance · Lead Approval</h1>
+        <p class="sub">Matrix people sign in order. Not-last: approve or reject only. Last: approve, reject, or escalate.</p>
+        <div class="matrix">
+          <div class="step now" id="fx1">1 · Finance<small>sakour@neweast.co · not last</small></div>
+          <div class="step" id="fx2">2 · Finance last<small>sakour@neweast.co · may escalate</small></div>
+        </div>
+        <div class="card">
+          <p id="fx-copy">You are Finance 1 of 2. Approve moves the same mailbox to the last seat. Escalate is hidden until you are last.</p>
+          <div class="row">
+            <button class="btn" id="btn-fx-ok">Approve</button>
+            <button class="btn gold" id="btn-fx-esc" style="display:none">Escalate</button>
+          </div>
+          <div class="toast" id="toast-fx"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-escalate">
+        <h1>Escalation</h1>
+        <p class="sub">Opened only by the last Finance person. Decision still lands on SAP B1 or stops the case.</p>
+        <div class="card">
+          <p>Escalation mailbox in this dummy: <b>sakour@neweast.co</b>. No other account is notified.</p>
+          <label style="margin-top:14px">Decision note</label>
+          <textarea id="e-note"></textarea>
+          <div class="row">
+            <button class="btn" id="btn-esc-ok">Approve to SAP B1</button>
+          </div>
+          <div class="toast" id="toast-esc"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-sap">
+        <h1>SAP Business One · customer master</h1>
+        <p class="sub">Live path writes the Business Partner. This screen is a dummy preview. No OCRD post is sent.</p>
+        <div class="card sap">
+          <div class="pack">
+            <div><small>CardCode</small><b>C-DEMO-00041</b></div>
+            <div><small>CardName</small><b>Oasis Demo Trading LLC</b></div>
+            <div><small>CardType</small><b>C · Customer</b></div>
+            <div><small>Email</small><b>sakour@neweast.co</b></div>
+            <div><small>Group</small><b>Dummy · walkthrough</b></div>
+            <div><small>Status</small><b class="ok">Ready · not posted</b></div>
+          </div>
+          <p style="margin-top:8px;color:#6d6262">ERP is SAP B1. Approved KYC is the source for the customer master. This recording stops before insert.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+<script>
+  const $ = (id) => document.getElementById(id);
+  const go = (name) => {
+    document.querySelectorAll(".view").forEach((v) => v.classList.toggle("on", v.id === "view-" + name));
+    document.querySelectorAll(".nav button").forEach((b) => b.classList.toggle("on", b.dataset.go === name));
+    window.__screen = name;
+  };
+  document.querySelectorAll(".nav button").forEach((b) => b.addEventListener("click", () => go(b.dataset.go)));
+  window.__kycGo = go;
+  window.__fx = 1;
+
+  const toast = (id, html) => {
+    const el = $(id);
+    el.innerHTML = html;
+    el.classList.add("on");
+  };
+
+  $("btn-open-create").onclick = () => go("create");
+  $("btn-save-lead").onclick = () => {
+    $("leadStatus").textContent = "Awaiting KYC";
+    toast("toast-lead", "Dummy lead saved locally. Request <b>DEMO-KYC-00041</b>. No POST.");
+  };
+  $("btn-mail").onclick = () => toast("toast-send", "Email preview only · To <b>sakour@neweast.co</b> · Subject: Complete KYC for Oasis Demo Trading LLC · nothing sent.");
+  $("btn-wa").onclick = () => toast("toast-send", "WhatsApp preview only · same mailbox <b>sakour@neweast.co</b> · +971 50 000 0041 · nothing sent.");
+  $("btn-submit-kyc").onclick = () => {
+    $("leadStatus").textContent = "With Sales";
+    toast("toast-kyc", "Dummy KYC submitted. Case returns to Sales. No live save.");
+  };
+  $("btn-sales-ok").onclick = () => {
+    $("leadStatus").textContent = "With manager";
+    toast("toast-sales", "Approved locally. Next: sales manager. Notify <b>sakour@neweast.co</b> only.");
+  };
+  $("btn-sales-no").onclick = () => toast("toast-sales", "Reject is shown for training. Not used in this dummy path.");
+  $("btn-mgr-ok").onclick = () => {
+    $("leadStatus").textContent = "Finance 1 of 2";
+    toast("toast-mgr", "Approved locally. Finance Lead Approval is open. Notify <b>sakour@neweast.co</b> only.");
+  };
+  $("btn-fx-ok").onclick = () => {
+    if (window.__fx === 1) {
+      window.__fx = 2;
+      $("fx1").className = "step done";
+      $("fx2").className = "step now";
+      $("fx-copy").textContent = "You are the last Finance person. Approve would go to SAP B1. Escalate is now available.";
+      $("btn-fx-esc").style.display = "inline-block";
+      $("leadStatus").textContent = "Finance last";
+      toast("toast-fx", "Finance 1 approved. Same mailbox now sits in the last seat. Escalate is unlocked.");
+      return;
+    }
+    $("leadStatus").textContent = "Ready for SAP B1";
+    toast("toast-fx", "Last Finance approved. Dummy stop before SAP B1 post.");
+  };
+  $("btn-fx-esc").onclick = () => {
+    $("leadStatus").textContent = "Escalated";
+    toast("toast-fx", "Escalated locally to <b>sakour@neweast.co</b>. No other account.");
+  };
+  $("btn-esc-ok").onclick = () => {
+    $("leadStatus").textContent = "Ready for SAP B1";
+    toast("toast-esc", "Escalation approved locally. Dummy SAP B1 preview only. No OCRD insert.");
+  };
+</script>
+</body>
+</html>

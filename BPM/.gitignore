@@ -1,0 +1,56 @@
+# ── Secrets & local config ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+scripts/backup-email.env
+*.pem
+*.key
+
+# ── Dependencies & build output ─────────────────────────────────────────
+node_modules/
+dist/
+build/
+out/
+.next/
+.swc/
+coverage/
+*.tsbuildinfo
+
+# ── Runtime data (never commit) ─────────────────────────────────────────
+backups/
+User_LOG/
+word-jobs/
+inbox/
+payload/
+.run/
+*.sql
+*.sql.gz
+bpm-api/docx/BPM-Files/
+bpm-api/docx/BPM-FILES/
+bpm-api/docx/*.docx
+bpm-api/tools/mermaid/pp.json
+bpm-api/tools/mermaid/t.mmd
+bpm-api/tools/mermaid/t.png
+
+# ── Server-specific / internal files ────────────────────────────────────
+NEWEAST-ACCOUNTS.md
+migrate-isolated.sh
+restore-on-target.sh
+deploy/*.neweast.cloud.conf
+
+# ── Logs ────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── OS / IDE ────────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+
+# ── Python / PM2 ────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+.pm2/
+material-kit-react/yarn.lock

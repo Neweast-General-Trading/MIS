@@ -1,0 +1,75 @@
+1
+00:00:00,010 --> 00:00:11,090
+This is Know Your Customer at NEWEAST. A new customer starts as a lead, and ends as a customer master in SAP.
+
+2
+00:00:11,140 --> 00:00:21,860
+Watch the role on screen. Sales creates. The customer fills. Sales, then the manager, then Finance. SAP is last.
+
+3
+00:00:21,910 --> 00:00:31,590
+Chapter one. Sales creates the lead and sends the KYC form.
+
+4
+00:00:31,640 --> 00:01:07,180
+Sales — This is Add New Lead. The salesman is already set. Capture the company.
+
+5
+00:01:07,230 --> 00:01:19,330
+Sales — Add the lead. Confirm on the next screen.
+
+6
+00:01:19,380 --> 00:01:30,690
+Sales — The lead is on Existing Lead. Send the KYC form from here.
+
+7
+00:01:30,740 --> 00:01:39,200
+Chapter two. The customer opens the KYC form from the link.
+
+8
+00:01:39,250 --> 00:01:48,110
+Customer — Company profile, bank, and owners. Required fields first.
+
+9
+00:01:48,160 --> 00:01:57,700
+Customer — Submit. The case returns to Sales.
+
+10
+00:01:57,750 --> 00:02:10,640
+Chapter three. Sales reviews the KYC, then sends it to the line manager.
+
+11
+00:02:10,690 --> 00:02:22,120
+Sales — Read the answers. Send to Line Manager.
+
+12
+00:02:22,170 --> 00:02:30,780
+Chapter four. The sales manager decides. Finance is next.
+
+13
+00:02:30,830 --> 00:02:43,330
+Sales manager — Open the request.
+
+14
+00:02:43,380 --> 00:02:51,780
+Chapter five. Finance Lead Approval. People sign in order.
+
+15
+00:02:51,830 --> 00:03:13,780
+Finance — Open the case. This seat is not last, so escalate is not here.
+
+16
+00:03:13,830 --> 00:03:29,260
+Finance — Now this is the last seat. Escalate is available.
+
+17
+00:03:29,310 --> 00:03:46,390
+Chapter six. Escalation. Approve still closes on SAP.
+
+18
+00:03:46,440 --> 00:03:52,590
+Chapter seven. SAP. The lead becomes the customer master.
+
+19
+00:03:52,640 --> 00:03:58,570
+Know Your Customer at NEWEAST. Lead. KYC. Approve. SAP.
